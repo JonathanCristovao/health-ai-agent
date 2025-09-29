@@ -205,3 +205,27 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Health AI Agent - Arquivos específicos do projeto
+# Bancos de dados (muito grandes para GitHub)
+data/datasus.db
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# Dados temporários e cache
+temp_downloads/
+data/simple_rag/vectors.pkl
+
+# Logs
+*.log
+datasus_etl.log
+
+# Arquivos gerados
+Health_AI_Agent_Architecture.pdf
+Health_AI_Agent_Architecture.png 
+Health_AI_Agent_Architecture_Documentation.pdf
+
+# Configurações locais
+.env.local
+config.local.py

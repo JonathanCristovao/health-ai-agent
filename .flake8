@@ -1,0 +1,51 @@
+[flake8]
+# Configuração do flake8 para Health AI Agent
+
+# Comprimento máximo de linha
+max-line-length = 120
+
+# Diretórios e arquivos a ignorar
+exclude = 
+    .venv,
+    __pycache__,
+    .git,
+    .pytest_cache,
+    temp_downloads,
+    data,
+    *.egg-info,
+    build,
+    dist
+
+# Códigos de erro a ignorar
+ignore = 
+    # F821: undefined name (para imports opcionais)
+    F821,
+    # E203: whitespace before ':' (conflito com black)
+    E203,
+    # W503: line break before binary operator (estilo preferido)
+    W503
+
+# Códigos a sempre verificar
+select = 
+    E,  # Erros de estilo
+    W,  # Warnings de estilo  
+    F,  # Erros do Pyflakes
+
+# Complexidade ciclomática máxima
+max-complexity = 15
+
+# Estatísticas de contagem
+statistics = True
+count = True
+
+# Formato de saída
+format = %(path)s:%(row)d:%(col)d: %(code)s %(text)s
+
+# Arquivos específicos com regras especiais
+per-file-ignores =
+    # Permitir imports não utilizados em __init__.py
+    __init__.py:F401,
+    # Permitir variáveis não utilizadas em scripts
+    scripts/*:F841,
+    # Permitir nomes undefined em health_agent.py (imports opcionais)
+    services/health_agent.py:F821
